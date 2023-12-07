@@ -7,7 +7,7 @@ from flask import Flask, render_template,Response
 app = Flask(__name__)
 app.config['SECRET_KEY'] = 'secret!'
 
-camera=cv2.VideoCapture(1)
+camera=cv2.VideoCapture(0)
 @app.route("/")
 def home():
     return render_template('home.html')
