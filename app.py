@@ -13,7 +13,7 @@ def home():
 
 f = ""
 def generate_frames():
-    camera=cv2.VideoCapture(0)
+    camera=cv2.VideoCapture(-1)
     while True:
         #read camera frame
         success,frame=camera.read()
