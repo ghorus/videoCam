@@ -19,4 +19,5 @@ def streaming(data):
     emit('user connected',data,broadcast=True)
 
 if __name__ == '__main__':
+    app.run()
     socketio.run(app)
