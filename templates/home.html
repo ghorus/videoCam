@@ -3,30 +3,18 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>test,12,3</title>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/socket.io/4.0.1/socket.io.js" integrity="sha512-q/dWJ3kcmjBLU4Qc47E4A9kTB4m3wuTY7vkFJDTZKjTs8jhyGQnaUrxa0Ytd0ssMZhbNua9hE+E7Qv1j+DyZwA==" crossorigin="anonymous"></script>
     <script src="https://unpkg.com/peerjs@1.5.1/dist/peerjs.min.js"></script>
+    <script src="{{url_for('static', filename='script.js')}}" defer ></script>
+
+    <title>test,12,3</title>
 </head>
 <body>
+    <style>
+        #video-grid{width:500px;height:500px;}
+        video{width: 100%;height: 100%;object-fit: cover;}
+    </style>
+    <p>hi</p>
     <div id="video-grid"></div>
-    <script>
-        var peer = new Peer();
-        const videoGrid = document.querySelector("#video-grid")
-        const myVideo = document.createElement('video')
-        myVideo.muted=true
-
-        navigator.mediaDevices.getUserMedia({
-            video:true,
-            audio:true
-        }).then(stream => {
-            addVideoStream(myVideo, stream)
-        })
-        function addVideoStream(video,stream){
-            video.srcObject = stream
-            video.addEventListener('loadedmetadata',()=>{
-                video.play()
-            })
-            videoGrid.append(video)
-        }
-    </script>
 </body>
 </html>
